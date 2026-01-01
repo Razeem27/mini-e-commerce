@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ProductCard from "./component/ProductCard";
+import ProductCard from "./components/ProductCard";
 interface Product {
   id: string | number;
   name: string;

@@ -192,7 +192,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         className="absolute top-8 left-1/2 -translate-x-1/2 w-[280px] h-[280px]"
       >
         {/* Red Circle Background */}
-        <div className="absolute -top-40 left-30 bg-gradient-to-br from-[#D85C5C] to-[#B84444] rounded-full shadow-lg h-[450px] w-[450px]" />
+        <div className="absolute -top-40 left-30 bg-linear-to-br from-[#D85C5C] to-[#B84444] rounded-full shadow-lg h-[450px] w-[450px]" />
 
         {/* Shoe Image */}
         <img
