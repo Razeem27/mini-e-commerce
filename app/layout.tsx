@@ -2,12 +2,13 @@ import { Inter } from "next/font/google";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Providers from "./components/Providers";
+import Link from "next/link";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter", // custom CSS variable
+  variable: "--font-inter",
 });
 
 export default function RootLayout({
