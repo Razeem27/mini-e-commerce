@@ -5,7 +5,7 @@ import ProductCard from "../components/ProductCard";
 import Container from "../components/Container";
 import { apiFetch } from "@/lib/apiClient";
 
-export default function products() {
+export default function Products() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 

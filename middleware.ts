@@ -4,7 +4,7 @@ import type { NextRequest } from "next/server";
 export function middleware(req: NextRequest) {
   const token = req.cookies.get("access_token");
 
-  const protectedRoutes = ["/profile", "/orders"];
+  const protectedRoutes = ["/Profile", "/orders"];
 
   if (protectedRoutes.some((route) => req.nextUrl.pathname.startsWith(route))) {
     if (!token) {

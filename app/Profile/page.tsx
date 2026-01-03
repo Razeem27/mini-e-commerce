@@ -6,7 +6,7 @@ import ProductOrderCard from "../components/ProductOrderCard";
 import { redirect } from "next/navigation";
 import { getAccessToken } from "@/lib/auth";
 
-export default function profile() {
+export default function Profile() {
   const [orders, setOrders] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -67,8 +67,8 @@ export default function profile() {
           <div className="flex justify-center items-center min-h-96">
             <div className="text-white text-center">
               <p className="text-xl mb-4">{error}</p>
-              <button 
-                onClick={() => window.location.href = '/login'}
+              <button
+                onClick={() => (window.location.href = "/login")}
                 className="mt-4 px-6 py-2 bg-white text-black rounded hover:bg-gray-200"
               >
                 Go to Login
@@ -86,13 +86,18 @@ export default function profile() {
         <div className="w-201.5 min-h-93.75">
           <p className="text-[40px] font-semibold text-white mb-5">My Orders</p>
           {orders.map((order, index) => {
-            return <ProductOrderCard key={order.id} orderData={{
-              title: order.product_name || "Product",
-              color: order.variation?.split(' / ')[0] || "N/A",
-              size: order.variation?.split(' / ')[1] || "N/A",
-              price: order.total_amount,
-              imageUrl: "/images/Product-order-nike-green.png"
-            }} />;
+            return (
+              <ProductOrderCard
+                key={order.id}
+                orderData={{
+                  title: order.product_name || "Product",
+                  color: order.variation?.split(" / ")[0] || "N/A",
+                  size: order.variation?.split(" / ")[1] || "N/A",
+                  price: order.total_amount,
+                  imageUrl: "/images/Product-order-nike-green.png",
+                }}
+              />
+            );
           })}
         </div>
       </Container>

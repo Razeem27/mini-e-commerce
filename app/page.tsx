@@ -18,5 +18,5 @@ const dummyProduct: Product = {
   sizes: [6, 7, 8, 9, 10],
 };
 export default function Home() {
-  redirect("/products");
+  redirect("/Products");
 }

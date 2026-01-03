@@ -41,7 +41,7 @@ export default function Navbar() {
           {isAuthenticated && isHydrated ? (
             <>
               <Link
-                href="/profile"
+                href="/Profile"
                 className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center"
               >
                 <svg
