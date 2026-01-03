@@ -1,20 +1,21 @@
 "use client";
 
-import React from "react";
+import { Suspense } from "react";
 import Container from "../components/Container";
 import ProductOrderCard from "../components/ProductOrderCard";
 import { useSearchParams } from "next/navigation";
 
-export default function OrderSuccess() {
+function OrderSuccessContent() {
   const searchParams = useSearchParams();
   
   const orderData = {
-    title: searchParams.get('title') || 'Product',
-    color: searchParams.get('color') || 'N/A',
-    size: searchParams.get('size') || 'N/A',
-    price: parseFloat(searchParams.get('price') || '0'),
-    imageUrl: searchParams.get('imageUrl') || '/images/nike_shoes.png'
+    title: searchParams.get("title") || "Product",
+    color: searchParams.get("color") || "N/A",
+    size: searchParams.get("size") || "N/A",
+    price: parseFloat(searchParams.get("price") || "0"),
+    imageUrl: searchParams.get("imageUrl") || "/images/nike_shoes.png",
   };
+
   return (
     <div className="py-8">
       <Container>
@@ -49,5 +50,13 @@ export default function OrderSuccess() {
         </div>
       </Container>
     </div>
+  );
+}
+
+export default function OrderSuccess() {
+  return (
+    <Suspense fallback={<div className="text-white text-center py-8 min-h-screen flex items-center justify-center">Loading...</div>}>
+      <OrderSuccessContent />
+    </Suspense>
   );
 }
