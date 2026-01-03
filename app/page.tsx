@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ProductCard from "./components/ProductCard";
+import { redirect } from "next/navigation";
 interface Product {
   id: string | number;
   name: string;
@@ -12,14 +13,10 @@ interface Product {
 const dummyProduct: Product = {
   id: 12321,
   name: "Nike shoes",
-  image: "/nike_shoes.png",
+  image: "/images/nike_shoes.png",
   brand_logo: "NIKE",
   sizes: [6, 7, 8, 9, 10],
 };
 export default function Home() {
-  return (
-    <div className="h-full flex justify-center items-center">
-      <ProductCard product={dummyProduct} />
-    </div>
-  );
+  redirect("/products");
 }

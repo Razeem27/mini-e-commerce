@@ -22,7 +22,7 @@ export default function OTPInput({
   phoneNumber,
 }: OTPInputProps) {
   const [otp, setOtp] = useState<string[]>(Array(length).fill(""));
-  const [countdown, setCountdown] = useState(60); // 60 seconds countdown
+  const [countdown, setCountdown] = useState(40); 
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
   // Initialize OTP from value prop
@@ -56,7 +56,7 @@ export default function OTPInput({
     // Update parent component
     onChange(newOtp.join(""));
 
-    // Auto-focus next input
+
     if (digit && index < length - 1) {
       inputRefs.current[index + 1]?.focus();
     }
@@ -111,7 +111,6 @@ export default function OTPInput({
   const handleResendOTP = () => {
     setCountdown(35);
       // Call resend OTP API here
-    console.log("Resending OTP...");
   };
 
   return (
@@ -137,13 +136,15 @@ export default function OTPInput({
           {otp.map((digit, index) => (
             <input
               key={index}
-              ref={el =>{inputRefs.current[index] = el} }
+              ref={(el) => {
+                inputRefs.current[index] = el;
+              }}
               type="text"
               inputMode="numeric"
               maxLength={1}
               value={digit}
-              onChange={e => handleChange(index, e.target.value)}
-              onKeyDown={e => handleKeyDown(index, e)}
+              onChange={(e) => handleChange(index, e.target.value)}
+              onKeyDown={(e) => handleKeyDown(index, e)}
               onPaste={handlePaste}
               className={`
                 w-16 h-16 

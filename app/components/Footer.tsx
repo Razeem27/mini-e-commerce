@@ -1,11 +1,13 @@
+import Container from "./Container";
+
 export default function Footer() {
   return (
-    <footer className=" bg-black/90">
-      <div className="flex items-center justify-between px-8 py-6">
+    <Container className="bg-black">
+      <div className="flex items-center justify-between h-24 sm:h-32 md:h-38">
         <div className="flex items-center m-1">
           <svg
-            width="107"
-            height="30"
+            width="106"
+            height="56"
             viewBox="0 0 107 56"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -17,15 +19,15 @@ export default function Footer() {
           </svg>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-8">
           <a
             href="#"
-            className="w-8 h-8 rounded-full hover:bg-neutral-700 flex items-center justify-center transition-colors"
+            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full hover:bg-neutral-700 flex items-center justify-center transition-colors"
             aria-label="Facebook"
           >
             <svg
-              width="10"
-              height="18"
+              width="21.7"
+              height="22.5"
               viewBox="0 0 10 18"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -39,11 +41,11 @@ export default function Footer() {
 
           <a
             href="#"
-            className="w-8 h-8 rounded-full hover:bg-neutral-700 flex items-center justify-center transition-colors"
+            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full hover:bg-neutral-700 flex items-center justify-center transition-colors"
             aria-label="Instagram"
           >
             <svg
-              width="19"
+              width="20"
               height="20"
               viewBox="0 0 19 20"
               fill="none"
@@ -58,7 +60,7 @@ export default function Footer() {
 
           <a
             href="#"
-            className="w-8 h-8 rounded-full hover:bg-neutral-700 flex items-center justify-center transition-colors"
+            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full hover:bg-neutral-700 flex items-center justify-center transition-colors"
             aria-label="X"
           >
             <svg
@@ -70,6 +72,6 @@ export default function Footer() {
           </a>
         </div>
       </div>
-    </footer>
+    </Container>
   );
 }
